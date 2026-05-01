@@ -7,14 +7,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-cuedx-2@xsuy&i^0*7pe$
 
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = [
-    'django-assigment-h1sm.onrender.com',
-    '127.0.0.1',
-    'localhost',
-    '0.0.0.0',
-    'django-assignment-qscq.onrender.com',
-    'django-assignment-1-bhyu.onrender.com',
+_default_allowed_hosts = ['127.0.0.1', 'localhost', '0.0.0.0']
+_env_allowed_hosts = [
+    host.strip() for host in os.environ.get('ALLOWED_HOSTS', '').split(',') if host.strip()
 ]
+
+ALLOWED_HOSTS = _default_allowed_hosts + _env_allowed_hosts
 
 # Allow Render to inject its public hostname at deploy time.
 render_hostname = os.environ.get('RENDER_EXTERNAL_HOSTNAME')

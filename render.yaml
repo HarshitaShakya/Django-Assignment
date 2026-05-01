@@ -6,6 +6,8 @@ services:
     startCommand: "gunicorn blogproject.wsgi:application"
     rootDir: "."
     envVars:
+      - key: PYTHON_VERSION
+        value: "3.10.13"
       - key: SECRET_KEY
         generateValue: true
       - key: DEBUG
