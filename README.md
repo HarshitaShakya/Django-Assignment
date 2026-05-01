@@ -53,6 +53,10 @@ python manage.py runserver
 
 Open http://127.0.0.1:8000/ in your browser.
 
+## Live Demo
+
+- https://django-assignment-3-rsxl.onrender.com
+
 ## Useful Routes
 
 - Home: `/`
